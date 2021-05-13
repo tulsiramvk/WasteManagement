@@ -1,0 +1,198 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    .btn_color:hover{
+      color: black !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/vipul.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <title>Recycling & Sustainability</title>
+</head>
+<body>
+
+
+
+
+<!--Navbar--->
+<div style="background-color: whitesmoke">
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>'
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/PublicUser/home/" style="color: black"><img src="{% static 'img/d.png' %}" width="50px">  <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link " href="/PublicUser/home/" id="" role=""  aria-haspopup="" aria-expanded="" style="color: green">
+           Home
+        </a>
+       
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color: green">
+          Our Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #BAE18D">
+          <a class="dropdown-item" href="/PublicUser/getdumpster/">Get A Dumpster</a>
+          <a class="dropdown-item" href="/PublicUser/bulkpickup/">Scheduled Bulk Pickup</a>
+          <a class="dropdown-item" href="/PublicUser/wastepickup/">Order Waste Pickup</a>
+          <a class="dropdown-item" href="/PublicUser/solution/">Recycling & Sustainability</a>
+          <a class="dropdown-item" href="/PublicUser/solidwaste/">BAGSTER® BAG</a>
+          
+          
+        </div>
+      </li>
+      
+     
+      <li >
+        <a class="nav-link " href="/PublicUser/about/" id="" role="" aria-haspopup="" aria-expanded="false" style="color: green">
+          About Us
+        </a>
+      </li>
+      <li >
+        <a class="nav-link " href="/PublicUser/complain/" id="" role=""  aria-haspopup="" aria-expanded="" style="color: green">
+           Complaints
+        </a>
+      </li>
+     
+    </ul>
+
+ {% if request.user.is_authenticated%}
+
+    <ul class="navbar-nav ml-auto mr-auto padding">
+        <li class="nav-item dropdown">
+          <a style="color: green;" href="/logout/" class="nav-link btn btn-outline-success btn_color">Logout</a>
+        </li>
+        
+      </ul>
+ {%else%}
+
+      <ul class = "navbar-nav ml-auto mr-auto padding">
+        <li class="">
+          <a href="/signup1/" style="color: green;" class="nav-link btn btn-outline-success btn_color">SignUp</a>
+          
+        </li>
+        <li class="">
+          <a href="/login1/" style="color: green;" class="nav-link btn btn-outline-success btn_color">Login</a>
+          
+        </li>
+        
+        
+      </ul>
+    
+  
+  {% endif %}
+
+  </div>
+</nav>
+</div>
+
+
+
+<!---Navbar close-->
+<div class="container-fluid">
+  <h1>Recycling & Sustainability</h1><br></div>
+
+
+
+
+<!-----body--->
+<div class="row row-cols-1 row-cols-md-2">
+ 
+  
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{% static 'img/234.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Waste Collection</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{% static 'img/235.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Recycling Process</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!---body--->
+    <div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h2>Connect With Us</h2>
+		</div>
+		<div class="col-12 social padding">
+			<a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+			<a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+			<a href="www.google.com"><i class="fab fa-google-plus-g"></i></a>
+			<a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+			<a href=""><i class="fab fa-youtube"></i></a>
+
+		</div>
+	</div>
+</div>
+
+
+<!--- Footer -->
+<footer>
+<div class="container-fluid padding">
+	<div class="row text-center">
+		<div class="col-md-4">
+			<img src="{% static 'img/chasma.png' %}" width="190px">
+			<hr class="light">
+			
+		</div>
+		<div class="col-md-4">
+			<hr class="light">
+			<h5>Contact Us</h5>
+			<hr class="light">
+			<p><a href="www.Whatsapp.com"><i class="fab fa-whatsapp"></i></a>&nbsp;Us  0000000000</p>
+			<p>Email- nagarnigam@gmail.com</p>
+			<p>Address- T-1,B-3,Capital Mall Bhopal</p>
+		</div>
+		<div class="col-md-4">
+			<hr class="light">
+			<h5>Our Timing</h5>
+			<hr class="light">
+			<p> Monday:9am-5pm</p>
+			<p>Saturday: 10am-4pm</p>
+			
+	</div>
+	<div class="col-12">
+		<hr class="light-100">
+		<h5>Copyright:nagar@nigam@gmail.com</h5>
+	</div>
+</div>
+
+</div>
+</footer>
+
+</body>
+</html>
+

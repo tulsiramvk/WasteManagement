@@ -1,0 +1,398 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    .btn_color:hover{
+      color: black !important;
+    }
+  </style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vipul.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<title>WasteManagement</title>
+</head>
+<body>
+
+
+
+
+<!--Navbar--->
+<div style="background-color: whitesmoke">
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>'
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/PublicUser/home/" style="color: black"><img src="{% static 'img/d.png' %}" width="50px">  <span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+        <a class="nav-link " href="/PublicUser/home/" id="" role=""  aria-haspopup="" aria-expanded="" style="color: green">
+           Home
+        </a>
+       
+      </li>
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color: green">
+          Our Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #BAE18D">
+          <a class="dropdown-item" href="/PublicUser/getdumpster/">Get A Dumpster</a>
+          <a class="dropdown-item" href="/PublicUser/bulkpickup/">Scheduled Bulk Pickup</a>
+          <a class="dropdown-item" href="/PublicUser/wastepickup/">Order Waste Pickup</a>
+          <a class="dropdown-item" href="/PublicUser/solution/">Recycling & Sustainability</a>
+          <a class="dropdown-item" href="/PublicUser/solidwaste/">BAGSTER® BAG</a>
+          
+          
+        </div>
+      </li>
+      
+     
+      <li >
+        <a class="nav-link " href="/PublicUser/about/" id="" role="" aria-haspopup="" aria-expanded="false" style="color: green">
+          About Us
+        </a>
+      </li>
+      <li >
+        <a class="nav-link " href="/PublicUser/complain/" id="" role=""  aria-haspopup="" aria-expanded="" style="color: green">
+           Complaints
+        </a>
+      </li>
+     
+    </ul>
+
+ {% if request.user.is_authenticated%}
+
+    <ul class="navbar-nav ml-auto mr-auto padding">
+        <li class="nav-item dropdown">
+          <a style="color: green;" href="/logout/" class="nav-link btn btn-outline-success btn_color">Logout</a>
+        </li>
+        
+      </ul>
+ {%else%}
+
+      <ul class = "navbar-nav ml-auto mr-auto padding">
+        <li class="">
+          <a href="/signup1/" style="color: green;" class="nav-link btn btn-outline-success btn_color">SignUp</a>
+          
+        </li>
+        <li class="">
+          <a href="/login1/" style="color: green;" class="nav-link btn btn-outline-success btn_color">Login</a>
+          
+        </li>
+        
+        
+      </ul>
+    
+  
+  {% endif %}
+
+  </div>
+</nav>
+</div>
+
+
+
+<!---Navbar close-->
+
+
+
+<!--Carousel---->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/n3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/n1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/n2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+    </div>
+
+<!--Carousel close--->
+
+<!------hanging section--------->
+	
+	 <section class="">
+	 	<div style="background-color: white">
+	     <div class="container-fluid mt-3">
+			 <div class="row">
+				 <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center text-dark">
+					 <h2> Our Focus </h2>
+					 
+				 </div>
+				 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2" >
+					<figure class="swing">
+            
+					 <div class="container1">
+					    <div class="py-5 px-5 bg-warning border border-white text-white">
+						 <span class="image "> <i class="fa fa-thumbs-o-up fa-5x"> </i> <b style="position:relative; bottom:21px; font-size:23px;" >TRADE WASTE </b> </span>  
+						
+						  <div class="middle">
+							 <div class="text">Innovatives waste solution, tailoredto your requiremensts </div>
+						  </div>
+						</div>  
+					 </div>
+           
+					 </figure>
+				 </div>
+				 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2" >
+					<figure class="swing">
+            
+       				<div class="container1">
+					    <div class="py-5 px-5 bg-danger border border-white text-white">
+						 <span class="image"> <i class="fa fa-camera-retro fa-5x"> </i> <b style="position:relative;color: white; bottom:21px; font-size:23px; "> SHREDDING </b></a> </span>
+						</div>
+						  <div class="middle">
+							<div class="text">Confidential and secure shredding for businesses of all sizes </div>
+						  </div>
+					 </div>
+           
+					
+				 </div>
+				 <div class="  col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+					<figure class="swing">
+          
+					 <div class="container1">
+					    <div class="py-5 px-5 bg-info border border-white text-white">
+						 <span class=" image  "> <i class="fa fa-money fa-5x"> </i> <b style=" position:relative; bottom:21px; font-size:23px;"> RECYCLING </b> </span>
+						
+						  <div class="middle">
+							<div class="text"> Turning and cardboard waste productsinto profit for your business </div>
+						  </div>
+						 </div> 
+					 </div>
+            
+					</figure>
+				 </div>
+				 <div class="  col-sm-3 col-md-3 col-lg-3 col-xl-3 " >
+					<figure class="swing"> 
+            
+					 <div class="container1">
+					    <div class="py-5 px-5 bg-secondary border border-white text-white ">
+						 <span  class=" image "> <i class="fa fa-thumbs-up fa-5x"> </i> <b style="position:relative; bottom:21px; font-size:23px;"> MISCELLANEOUS</b>  </span> 
+						   
+						</div>
+						  <div class="middle">
+							<div class="text"> Reduce costsand minimise enviromental waste  </div>
+						  </div>
+					 </div>
+           
+					</figure>
+				 </div>
+			 </div>
+		 </div>	
+		 </div> 
+	</section></figure>
+
+<!------hanging section close--------->	
+
+<!----Card sec--->
+<div class="container-fluid">
+<div class="card-group">
+  <div class="card">
+    <img src="{% static 'img/wm.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">TEMPORARY DUMPSTER RENTAL</h5>
+      <p class="card-text">If you're starting a project or you're going to have more waste than usual, a roll-off dumpster can be a great solution. Waste Management offers a variety of roll-offs for almost any need. With competitive pricing and the most reliable service in the business, you can be sure that no matter the amount of waste, we can help you dispose of it.</p>
+    </div>
+    <div class="card-footer">
+      <a href="/PublicUser/getdumpster/"><small class="text-muted"><h3 style="color:green">Get A Dumpster</h3></small></a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'img/wm2.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">RESIDENTIAL WASTE & RECYCLING PICKUP</h5>
+      <p class="card-text">Waste Management offers reliable, efficient trash collection and recycling pickup services that work with your schedule so you can focus on the things that matter most.</p>
+    </div>
+    <div class="card-footer">
+      <a href="/PublicUser/wastepickup/"><small class="text-muted"><h3 style="color:green">Order Waste Pickup</h3></small></a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'img/w6.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">BULK TRASH PICKUP</h5>
+      <p class="card-text">If you need to get rid of excess waste beyond your normal service needs, Waste Management is here to help. With our variety of on-demand pickup services and trash removal, just point, click and we’ll come get it. Anytime, anywhere.</p>
+    </div>
+    <div class="card-footer">
+      <a href="/PublicUser/bulkpickup/"><small class="text-muted"><h3 style="color:green">Schedule Bulk Pickup</h3></small></a>
+    </div>
+  </div>
+</div>
+
+<!----card sec close-->
+
+<!---card sec 2-->
+
+<div class="card-group">
+  <div class="card">
+    <img src="{% static 'img/w4.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">RECYCLING & SUSTAINABILITY SERVICES</h5>
+      <p class="card-text">As India’s largest recycler, we’re committed to making our world more sustainable. From recycling collection to consulting, we’ll work together to find a forward-thinking solution that works for youT.</p>
+    </div>
+    <div class="card-footer">
+      <a href="/PublicUser/solution/"><small class="text-muted"><h3 style="color:green">Find A Solution</h3></small></a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'img/16.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">BAGSTER® BAG</h5>
+      <p class="card-text">Whether you’re cleaning out a closet or you need to get rid of debris from a smaller construction or remodeling project, our Bagster® bag can be a simple solution. Unfold it, fill it up and we’ll come take it away. It’s that simple</p>
+    </div>
+    <div class="card-footer">
+      <a href="/PublicUser/solidwaste/"><small class="text-muted"><h3 style="color:green">Know More</h3></small></a>
+    </div>
+  </div>
+  
+</div>
+</div>
+
+<!--card sec 2 close-->
+
+
+<!--Youtube link--->
+    <br><div class="col-lg-12">
+    <div class="container-fluid padding">
+<div class="row padding">
+	<div class="col-lg-6">
+		<h2>Award Gallery</h2><br>
+		<p class="text-justify">
+“Cleanliness is Godliness” is the mantra of Mahatma Gandhiji, Father of Nation. He demonstrated, propagated and insisted for individual and community cleanliness throughout his life. 
+Cleanliness is a clean habit which is very necessary to all of us. Cleanliness is a habit of keeping ourselves physically and mentally clean including with our home, pet animals, surroundings, environment, pond, river, schools, etc. We should keep ourselves neat, clean and well-dressed all time. It helps in making a good personality and impression in the society as it reflects a clean character. We should maintain the environment and natural resources (water, food, land, etc) cleanliness together with our body cleanliness in order to make the possibility of life existence forever on the earth..</p>
+		<br>
+		
+	</div>
+	<div class="col-lg-6">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/c1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/c2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/c3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+        </div></div></div></div></div>
+        <br><br>
+<!--- Connect -->
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h2>Connect With Us</h2>
+		</div>
+		<div class="col-12 social padding">
+			<a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+			<a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+			<a href="www.google.com"><i class="fab fa-google-plus-g"></i></a>
+			<a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+			<a href=""><i class="fab fa-youtube"></i></a>
+
+		</div>
+	</div>
+</div>
+</div>
+
+<!--- Footer -->
+<footer>
+<div class="container-fluid padding">
+	<div class="row text-center">
+		<div class="col-md-4">
+			<img src="{% static 'img/chasma.png' %}" width="190px">
+			<hr class="light">
+			
+		</div>
+		<div class="col-md-4">
+			<hr class="light">
+			<h5>Contact Us</h5>
+			<hr class="light">
+			<p><a href="www.Whatsapp.com"><i class="fab fa-whatsapp"></i></a>&nbsp;Us  0000000000</p>
+			<p>Email- nagarnigam@gmail.com</p>
+			<p>Address- T-1,B-3,Capital Mall Bhopal</p>
+		</div>
+		<div class="col-md-4">
+			<hr class="light">
+			<h5>Our Timing</h5>
+			<hr class="light">
+			<p> Monday:9am-5pm</p>
+			<p>Saturday: 10am-4pm</p>
+      <p>Sunday: Off</p>
+			
+	</div>
+	<div class="col-12">
+		<hr class="light-100">
+		<h5>Copyright:nagar@nigam@gmail.com</h5>
+	</div>
+</div>
+
+</div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
